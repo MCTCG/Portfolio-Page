@@ -81,7 +81,7 @@
                 <div class="flex items-center space-x-4 mb-8">
                     <!-- Profile Picture Placeholder -->
                     <div class="w-14 h-14 rounded-full overflow-hidden bg-[var(--color-primary)] flex items-center justify-center">
-                        <img src="" alt="Profile" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/100x100/2a8dc7/ffffff?text=MC';">
+                        <img src="uploaded:image_0b277b.jpg-b3ee4f32-8f2c-4e02-ac5e-304b197a1b60" alt="Profile" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/100x100/2a8dc7/ffffff?text=MC';">
                     </div>
                     <div>
                         <h2 class="text-xl font-extrabold tracking-wider">Matheo Caro</h2>
@@ -140,6 +140,9 @@
                             <p class="text-gray-400 mb-6 max-w-lg">
                                 En tant qu'étudiant en BUT 2 GEII (parcours AII), je me spécialise à l'intersection du Génie Électrique et de l'Informatique Industrielle, en me concentrant sur l'apprentissage automatique, les systèmes embarqués et l'automatisation industrielle. Explorez mes projets concrets en vision et analyse de données.
                             </p>
+                            <a href="#projects" class="text-[var(--color-primary)] font-semibold text-lg hover:text-[var(--color-secondary)] transition">
+                                Voir la Vitrine des Projets >
+                            </a>
                         </div>
 
 
@@ -162,11 +165,13 @@
                 <section id="projects" class="mt-16">
                     <div class="flex justify-between items-baseline mb-8">
                         <h2 class="text-3xl font-bold">Projects GEII/AII </h2>
+                        <span class="text-sm text-gray-500">Cliquez pour voir les détails</span>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 
                         <!-- Project Card 1: Modification des fichier .WAV -->
                         <a href="#project-wav" data-view="project-wav-view" class="project-card block cursor-pointer bg-gray-900 rounded-xl overflow-hidden shadow-lg card-border-gradient hover:shadow-xl transition duration-300">
+                            <!-- REFERENCEMENT DE L'IMAGE - Mod de fich wav: filtrenum.png -->
                             <div class="h-40 bg-cover bg-center" style="background-image: url('filtrenum.png');"></div>
                             <div class="p-4">
                                 <h3 class="text-xl font-semibold mb-1">Modification des fichier .WAV</h3>
@@ -176,19 +181,19 @@
 
                         <!-- Project Card 2: Thermometre Numerique -->
                         <a href="#project-thermo" data-view="project-thermo-view" class="project-card block cursor-pointer bg-gray-900 rounded-xl overflow-hidden shadow-lg card-border-gradient hover:shadow-xl transition duration-300">
-                            <!-- Placeholder image URL for thermo.jpg -->
-                            <div class="h-40 bg-cover bg-center" style="background-image: url('images/Thermo.jpg');"></div>
+                            <!-- REFERENCEMENT DE L'IMAGE - Thermometre: thermo.jpg -->
+                            <div class="h-40 bg-cover bg-center" style="background-image: url('thermo.jpg');"></div>
                             <div class="p-4">
                                 <h3 class="text-xl font-semibold mb-1">Thermometre Numerique</h3>
                                 <p class="text-gray-400 text-sm">La conception d'un Thermometre avec de l'Électronique discrète</p>
                             </div>
                         </a>
 
-                        <!-- Project Card 3: Réseau Neuronal -->
+                        <!-- Project Card 3: Robot Autonome -->
                         <a href="#project-nn" data-view="project-nn-view" class="project-card block cursor-pointer bg-gray-900 rounded-xl overflow-hidden shadow-lg card-border-gradient hover:shadow-xl transition duration-300">
-                             <div class="h-40 bg-cover bg-center" style="background-image: url('images/Temp.jpg');"></div>
+                            <!-- REFERENCEMENT DE L'IMAGE - Robot Autonome: Temp.jpg -->
+                             <div class="h-40 bg-cover bg-center" style="background-image: url('Temp.jpg');"></div>
                             <div class="p-4">
-                                <img src="images/Temp.jpg">
                                 <h3 class="text-xl font-semibold mb-1">Robot Autonome</h3>
                                 <p class="text-gray-400 text-sm">Développement d'un robot autonome</p>
                             </div>
@@ -489,7 +494,7 @@
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                     <!-- Image/Video Area -->
                     <div class="lg:col-span-2">
-                        <div class="h-96 bg-gray-900 rounded-xl flex items-center justify-center card-border-gradient" style="background-image: url('https://placehold.co/800x400/1e6fa3/ffffff?text=Visualisation+des+Signaux+Audio'); background-size: cover; background-position: center;">
+                        <div class="h-96 bg-gray-900 rounded-xl flex items-center justify-center card-border-gradient" style="background-image: url('filtrenum.png'); background-size: cover; background-position: center;">
                             <!-- Placeholder for oscilloscope view or spectrogram -->
                         </div>
                     </div>
@@ -542,7 +547,7 @@
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                     <!-- Image/Video Area -->
                     <div class="lg:col-span-2">
-                        <div class="h-96 bg-gray-900 rounded-xl flex items-center justify-center card-border-gradient" style="background-image: url('https://placehold.co/800x400/2a8dc7/ffffff?text=Schéma+Electronique+du+Thermomètre'); background-size: cover; background-position: center;">
+                        <div class="h-96 bg-gray-900 rounded-xl flex items-center justify-center card-border-gradient" style="background-image: url('thermo.jpg'); background-size: cover; background-position: center;">
                             <!-- Placeholder for schematic or PCB layout -->
                         </div>
                     </div>
@@ -578,14 +583,14 @@
             </div>
 
             <!-- ============================================== -->
-            <!-- PROJECT DETAIL VIEW 3: Réseau Neuronal -->
+            <!-- PROJECT DETAIL VIEW 3: Robot Autonome -->
             <!-- ============================================== -->
             <div id="project-nn-view" class="view-content">
                 <a href="#projects" data-view="home-view" class="text-sm text-gray-400 hover:text-[var(--color-primary)] transition mb-6 block">
                     &larr; Retour aux Projets
                 </a>
                 <h1 class="text-4xl font-extrabold text-[var(--color-primary)] mb-4">
-                    Réseau Neuronal pour la Classification d'Images
+                    Robot Autonome
                 </h1>
                 <p class="text-lg text-gray-300 mb-8">
                     Projet S2 : Automatisme et IA.
@@ -594,7 +599,7 @@
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                     <!-- Image/Video Area -->
                     <div class="lg:col-span-2">
-                        <div class="h-96 bg-gray-900 rounded-xl flex items-center justify-center card-border-gradient" style="background-image: url('https://placehold.co/800x400/00a0e5/ffffff?text=Architecture+CNN'); background-size: cover; background-position: center;">
+                        <div class="h-96 bg-gray-900 rounded-xl flex items-center justify-center card-border-gradient" style="background-image: url('Temp.jpg'); background-size: cover; background-position: center;">
                             <!-- Placeholder for CNN architecture diagram -->
                         </div>
                     </div>
