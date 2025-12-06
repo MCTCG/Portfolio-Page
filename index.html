@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matheo Caro | Portfolio GEII</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Use Inter font family -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            background-color: #0d0d0d; /* Slightly less harsh than pure black */
+        }
+        /* Définition des couleurs primaires basées sur #2a8dc7 (Bleu) */
+        :root {
+            --color-primary: #2a8dc7; /* Le bleu demandé */
+            --color-secondary: #00a0e5; /* Une nuance plus claire */
+            --color-dark-accent: #1e6fa3; /* Une nuance plus foncée */
+        }
+
+        /* Custom gradient border for cards using the new blue theme */
+        .card-border-gradient {
+            border: 1px solid transparent;
+            background: linear-gradient(#0d0d0d, #122a47) padding-box,
+                        linear-gradient(to right, var(--color-dark-accent), var(--color-secondary)) border-box;
+            border-radius: 0.75rem; /* rounded-xl */
+        }
+        .text-gradient {
+            background-image: linear-gradient(to right, var(--color-dark-accent), var(--color-secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        /* Masque toutes les vues de détail par défaut */
+        .view-content:not(#home-view) {
+            display: none;
+        }
+
+        /* Style pour les timelines/sections de formation/expérience */
+        .timeline-item {
+            position: relative;
+            padding-left: 20px;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 6px;
+            width: 8px;
+            height: 8px;
+            background: var(--color-primary);
+            border-radius: 50%;
+        }
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 3px;
+            top: 14px;
+            bottom: -5px;
+            width: 1px;
+            background: #1e6fa3; /* Darker blue line */
+        }
+        /* Fix the last item's line */
+        .timeline-item:last-child::after {
+            display: none;
+        }
+    </style>
+</head>
+<body class="text-white">
+
+    <!-- Main Container: Fixed Sidebar (Desktop) and Main Content -->
+    <div class="lg:flex min-h-screen">
+
+        <!-- Fixed Left Sidebar (Navigation) -->
+        <aside class="w-full lg:w-64 bg-black p-6 border-r border-gray-900 flex flex-col justify-between lg:sticky top-0 lg:h-screen">
+            <!-- Profile/Branding Section -->
+            <div class="mb-10">
+                <div class="flex items-center space-x-4 mb-8">
+                    <!-- Profile Picture Placeholder -->
+                    <div class="w-14 h-14 rounded-full overflow-hidden bg-[var(--color-primary)] flex items-center justify-center">
+                        <img src="" alt="Profile" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/100x100/2a8dc7/ffffff?text=MC';">
+                    </div>
+                    <div>
+                        <h2 class="text-xl font-extrabold tracking-wider">Matheo Caro</h2>
+                        <p class="text-xs text-gray-400 mt-0.5">BUT2 GEII AII</p>
+                    </div>
+                </div>
+
+                <!-- Navigation Links -->
+                <nav class="space-y-4">
+                    <!-- Home link acts as the main navigation button -->
+                    <a href="#home" data-view="home-view" class="nav-link flex items-center space-x-3 text-lg font-medium text-[var(--color-primary)] hover:text-[var(--color-secondary)] transition duration-150">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 00-1-1H9a1 1 0 00-1 1v4a1 1 0 001 1z"></path></svg>
+                        <span>Accueil</span>
+                    </a>
+                </nav>
+            </div>
+
+            <!-- CV Download Link -->
+            <a href="cv.pdf" download class="text-sm text-[var(--color-primary)] hover:text-[var(--color-secondary)] font-semibold transition duration-150 hidden lg:block">
+                Télécharger le CV (PDF) >
+            </a>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="flex-1 p-6 sm:p-10">
+
+            <!-- ============================================== -->
+            <!-- HOME VIEW (Visible by default) -->
+            <!-- ============================================== -->
+            <div id="home-view" class="view-content">
+                <!-- Hero Section -->
+                <section id="home" class="mb-16">
+                    <div class="flex justify-between items-start mb-12">
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight max-w-2xl">
+                            Génie électrique et informatique industrielle
+                        </h1>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+
+                        <!-- Stats Card 1: 5+ AI Projects Completed -->
+                        <div class="bg-gray-900 p-6 rounded-xl shadow-lg card-border-gradient transition hover:shadow-[var(--color-primary)]/50 hover:scale-[1.02]">
+                            <p class="text-5xl font-extrabold text-gradient">5</p>
+                            <p class="text-lg text-gray-300 mt-2">Projets dans la formation</p>
+                        </div>
+
+                        <!-- Stats Card 2: Deep Learning Focus -->
+                        <div class="bg-gray-900 p-6 rounded-xl shadow-lg card-border-gradient transition hover:shadow-[var(--color-primary)]/50 hover:scale-[1.02]">
+                            <p class="text-4xl font-extrabold text-gradient">Automatisme Informatique Industrielle</p>
+                            <p class="text-lg text-gray-300 mt-2">Specialization AII</p>
+                        </div>
+
+                        <!-- CTA/Summary Block (Occupies two grid slots on desktop) -->
+                        <div class="md:col-span-2 row-span-2 bg-gray-900 p-8 rounded-xl shadow-2xl flex flex-col justify-center">
+                            <h2 class="text-3xl font-bold mb-4">Construire des systèmes intelligents en GEII</h2>
+                            <p class="text-gray-400 mb-6 max-w-lg">
+                                En tant qu'étudiant en BUT 2 GEII (parcours AII), je me spécialise à l'intersection du Génie Électrique et de l'Informatique Industrielle, en me concentrant sur l'apprentissage automatique, les systèmes embarqués et l'automatisation industrielle. Explorez mes projets concrets en vision et analyse de données.
+                            </p>
+                        </div>
+
+
+                        <!-- Stats Card 3: 4 Semesters of Core Modules -->
+                        <div class="bg-gray-900 p-6 rounded-xl shadow-lg card-border-gradient transition hover:shadow-[var(--color-primary)]/50 hover:scale-[1.02]">
+                            <p class="text-5xl font-extrabold text-gradient">4</p>
+                            <p class="text-lg text-gray-300 mt-2">Semestres de Formation</p>
+                        </div>
+
+                        <!-- Stats Card 4: Languages/Frameworks -->
+                        <div class="bg-gray-900 p-6 rounded-xl shadow-lg card-border-gradient transition hover:shadow-[var(--color-primary)]/50 hover:scale-[1.02]">
+                            <p class="text-5xl font-extrabold text-gradient">Python</p>
+                            <p class="text-lg text-gray-300 mt-2">C/C++, TensorFlow</p>
+                        </div>
+                    </div>
+
+                </section>
+
+                <!-- Featured Projects Section -->
+                <section id="projects" class="mt-16">
+                    <div class="flex justify-between items-baseline mb-8">
+                        <h2 class="text-3xl font-bold">Projects GEII/AII </h2>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+                        <!-- Project Card 1: Modification des fichier .WAV -->
+                        <a href="#project-wav" data-view="project-wav-view" class="project-card block cursor-pointer bg-gray-900 rounded-xl overflow-hidden shadow-lg card-border-gradient hover:shadow-xl transition duration-300">
+                            <div class="h-40 bg-cover bg-center" style="background-image: url('filtrenum.png');"></div>
+                            <div class="p-4">
+                                <h3 class="text-xl font-semibold mb-1">Modification des fichier .WAV</h3>
+                                <p class="text-gray-400 text-sm">En utilisant python et SciPy</p>
+                            </div>
+                        </a>
+
+                        <!-- Project Card 2: Thermometre Numerique -->
+                        <a href="#project-thermo" data-view="project-thermo-view" class="project-card block cursor-pointer bg-gray-900 rounded-xl overflow-hidden shadow-lg card-border-gradient hover:shadow-xl transition duration-300">
+                            <!-- Placeholder image URL for thermo.jpg -->
+                            <div class="h-40 bg-cover bg-center" style="background-image: url('images/Thermo.jpg');"></div>
+                            <div class="p-4">
+                                <h3 class="text-xl font-semibold mb-1">Thermometre Numerique</h3>
+                                <p class="text-gray-400 text-sm">La conception d'un Thermometre avec de l'Électronique discrète</p>
+                            </div>
+                        </a>
+
+                        <!-- Project Card 3: Réseau Neuronal -->
+                        <a href="#project-nn" data-view="project-nn-view" class="project-card block cursor-pointer bg-gray-900 rounded-xl overflow-hidden shadow-lg card-border-gradient hover:shadow-xl transition duration-300">
+                             <div class="h-40 bg-cover bg-center" style="background-image: url('images/Temp.jpg');"></div>
+                            <div class="p-4">
+                                <h3 class="text-xl font-semibold mb-1">Robot Autonome</h3>
+                                <p class="text-gray-400 text-sm">Développement d'un robot autonome</p>
+                            </div>
+                        </a>
+                    </div>
+                </section>
+
+                <!-- CV/Resume Section (REPLACED CONTENT) -->
+                <section id="cv-section" class="mt-16 bg-gray-900 p-8 rounded-xl card-border-gradient">
+                    <h2 class="text-3xl font-bold mb-4">CV & Profil Académique</h2>
+                    
+                    <!-- Profile Summary Box -->
+                    <div class="bg-black p-6 rounded-lg mb-8 shadow-inner border border-gray-800">
+                        <h3 class="text-2xl font-bold text-gradient mb-3">Mathéo CARO</h3>
+                        <p class="text-gray-400 italic mb-4">
+                            Fasciné par les défis de l'industrie et désireux de mettre en pratique mes connaissances en Génie Électrique et Informatique Industrielle (GEII), je suis à la recherche d'un stage d'une durée de 8 semaines minimum. Ce stage me permettrait d'acquérir une première expérience professionnelle.
+                        </p>
+                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-y-2 text-sm text-gray-300">
+                            <p><span class="font-semibold text-[var(--color-secondary)]">Âge:</span> 19 ANS (12/12/2005)</p>
+                            <p><span class="font-semibold text-[var(--color-secondary)]">Disponibilité:</span> À partir du 20 avril 2025</p>
+                            <p><span class="font-semibold text-[var(--color-secondary)]">Permis:</span> Permis B en cours</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                        
+                        <!-- Col 1: Formation & Contact -->
+                        <div class="lg:col-span-1 space-y-8">
+                            
+                            <!-- Contact Box -->
+                            <div class="bg-gray-900 p-6 rounded-xl card-border-gradient">
+                                <h3 class="text-xl font-bold mb-4 text-gradient">Contact</h3>
+                                <ul class="space-y-2 text-gray-300">
+                                    <li class="flex items-center space-x-2">
+                                        <svg class="w-5 h-5 text-[var(--color-primary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V5z"></path></svg>
+                                        <span>matcarouniversities@gmail.com</span>
+                                    </li>
+                                    <li class="flex items-center space-x-2">
+                                        <svg class="w-5 h-5 text-[var(--color-primary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V5z"></path></svg>
+                                        <span>matheo.caro.area@gmail.com</span>
+                                    </li>
+                                    <li class="flex items-center space-x-2">
+                                        <svg class="w-5 h-5 text-[var(--color-primary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V5z"></path></svg>
+                                        <span>+33 7 75 76 64 32</span>
+                                    </li>
+                                    <li class="flex items-center space-x-2">
+                                        <svg class="w-5 h-5 text-[var(--color-primary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z"></path></svg>
+                                        <span>Vélizy-Villacoublay</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- Langues & Qualités -->
+                            <div class="bg-gray-900 p-6 rounded-xl card-border-gradient">
+                                <h3 class="text-xl font-bold mb-4 text-gradient">Langues & Qualités</h3>
+                                <div class="space-y-4">
+                                    <div class="text-sm">
+                                        <h4 class="font-semibold text-white mb-1">Langues</h4>
+                                        <ul class="list-disc list-inside ml-2 text-gray-400">
+                                            <li>Anglais (C2 - TOEFL 107/120)</li>
+                                            <li>Espagnol (C2)</li>
+                                            <li>Français (C1)</li>
+                                        </ul>
+                                    </div>
+                                    <div class="text-sm">
+                                        <h4 class="font-semibold text-white mb-1">Qualités</h4>
+                                        <div class="flex flex-wrap gap-2">
+                                            <span class="px-3 py-1 bg-gray-800 rounded-full text-xs">Persévérance</span>
+                                            <span class="px-3 py-1 bg-gray-800 rounded-full text-xs">Pensée critique</span>
+                                            <span class="px-3 py-1 bg-gray-800 rounded-full text-xs">Travail d'équipe</span>
+                                            <span class="px-3 py-1 bg-gray-800 rounded-full text-xs">Conception des projets</span>
+                                            <span class="px-3 py-1 bg-gray-800 rounded-full text-xs">Communication efficace</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Col 2: Formation & Expérience -->
+                        <div class="lg:col-span-2 space-y-8">
+                            
+                            <!-- Formation -->
+                            <div class="bg-gray-900 p-6 rounded-xl card-border-gradient">
+                                <h3 class="text-xl font-bold mb-4 text-gradient">Formation Académique</h3>
+                                <div class="space-y-4 border-l border-gray-700 pl-4">
+                                    <!-- BUT 1 et 2 GEII -->
+                                    <div class="relative timeline-item pb-4">
+                                        <p class="text-sm text-gray-400">Depuis Septembre 2024</p>
+                                        <p class="font-semibold text-white">BUT 1 et 2 GEII</p>
+                                        <p class="text-sm text-[var(--color-secondary)]">IUT de Vélizy, UVSQ, Vélizy-Villacoublay</p>
+                                    </div>
+                                    <!-- Bac American -->
+                                    <div class="relative timeline-item pb-4">
+                                        <p class="text-sm text-gray-400">2022-24</p>
+                                        <p class="font-semibold text-white">Bac American</p>
+                                        <p class="text-sm text-[var(--color-secondary)]">CIC: Valencia, Venezuela</p>
+                                        <p class="text-xs text-gray-500 mt-1">Baccalauréat américain avec une spécialisation en mathématiques.</p>
+                                    </div>
+                                    <!-- Harvard CS50x -->
+                                    <div class="relative timeline-item pb-4">
+                                        <p class="text-sm text-gray-400">Juin 2024</p>
+                                        <p class="font-semibold text-white">Harvard CS50x</p>
+                                        <p class="text-xs text-gray-500 mt-1">Diplôme Digital de Programmation</p>
+                                    </div>
+                                    <!-- Certificats -->
+                                    <div class="relative timeline-item pb-4">
+                                        <p class="font-semibold text-white">Certificat Electronique, Arduino</p>
+                                    </div>
+                                    <div class="relative timeline-item pb-4">
+                                        <p class="font-semibold text-white">Certificat Programme Universitaire UAM</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Expériences Professionnelles -->
+                            <div class="bg-gray-900 p-6 rounded-xl card-border-gradient">
+                                <h3 class="text-xl font-bold mb-4 text-gradient">Expériences Professionnelles</h3>
+                                <div class="space-y-4 border-l border-gray-700 pl-4">
+                                    <!-- Stagiaire en production -->
+                                    <div class="relative timeline-item pb-4">
+                                        <p class="font-semibold text-white">Stagiaire en production de plastiques</p>
+                                        <p class="text-sm text-[var(--color-secondary)]">Plasticos Trebol LLC (Entreprise Familiale) - Venezuela</p>
+                                        <p class="text-xs text-gray-500 mt-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    </div>
+                                    <!-- Apprenti Mouliste -->
+                                    <div class="relative timeline-item pb-4">
+                                        <p class="font-semibold text-white">Apprenti Mouliste</p>
+                                        <p class="text-xs text-gray-500 mt-1">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Col 3: Compétences Techniques (Full Width) -->
+                    <div class="mt-8 bg-gray-900 p-6 rounded-xl card-border-gradient">
+                        <h3 class="text-xl font-bold mb-4 text-gradient">Compétences Techniques</h3>
+                        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                            <!-- Informatique -->
+                            <div>
+                                <h4 class="font-semibold text-white mb-2">Informatique</h4>
+                                <ul class="space-y-1 text-sm text-gray-400 list-disc list-inside">
+                                    <li>Language C/C++ et Python</li>
+                                    <li>Code::Blocks</li>
+                                    <li>Linux CLI</li>
+                                    <li>LabView</li>
+                                    <li>Arduino - Rasberry, Mirco C</li>
+                                </ul>
+                            </div>
+                            <!-- Informatique Industrielle -->
+                            <div>
+                                <h4 class="font-semibold text-white mb-2">Informatique Industrielle</h4>
+                                <ul class="space-y-1 text-sm text-gray-400 list-disc list-inside">
+                                    <li>FPGA (Xlinix) VHDL</li>
+                                    <li>Microcontroleurs 8051-C</li>
+                                </ul>
+                            </div>
+                            <!-- Electronique -->
+                            <div>
+                                <h4 class="font-semibold text-white mb-2">Électronique</h4>
+                                <ul class="space-y-1 text-sm text-gray-400 list-disc list-inside">
+                                    <li>Design PCB avec KICAD (CAO)</li>
+                                    <li>Électronique Numérique Analogique</li>
+                                    <li>Conversion d'énergie...</li>
+                                    <li>Simulation LTSpice et PSIM</li>
+                                </ul>
+                            </div>
+                            <!-- Automatisme -->
+                            <div>
+                                <h4 class="font-semibold text-white mb-2">Automatisme</h4>
+                                <ul class="space-y-1 text-sm text-gray-400 list-disc list-inside">
+                                    <li>Automates Programables Schnider</li>
+                                    <li>ACE Grafcet</li>
+                                    <li>Ladder</li>
+                                </ul>
+                            </div>
+                            <!-- Drivers et Divers -->
+                            <div>
+                                <h4 class="font-semibold text-white mb-2">Drivers et Divers</h4>
+                                <ul class="space-y-1 text-sm text-gray-400 list-disc list-inside">
+                                    <li>Libre Office et Google + IA Gemini</li>
+                                    <li>Canva</li>
+                                    <li>Design et Impression 3D</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Personal Section / About Me -->
+                <section id="about" class="mt-16">
+                    <h2 class="text-3xl font-bold mb-6">À Propos de Moi</h2>
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+                        <!-- Text Content (2/3 width on large screens) -->
+                        <div class="lg:col-span-2 bg-gray-900 p-8 rounded-xl shadow-lg">
+                            <p class="text-gray-300 leading-relaxed mb-4">
+                                Au-delà des cours et des travaux pratiques, je suis motivé par la passion de résoudre des problèmes concrets en utilisant des systèmes intelligents. Mes études en GEII (Génie Électrique et Informatique Industrielle) m'ont apporté une base solide à la fois en matériel (capteurs, systèmes embarqués) et en logiciel (algorithmes, réseaux neuronaux) nécessaire pour déployer des solutions d'IA efficaces.
+                            </p>
+                            <p class="text-gray-300 leading-relaxed">
+                                Je suis actuellement à la recherche d'une opportunité de stage où je pourrai appliquer mes compétences en apprentissage profond et acquérir une expérience pratique en milieu professionnel. Je crois au pouvoir de l'innovation collaborative et de l'apprentissage continu.
+                            </p>
+                        </div>
+
+                        <!-- Hobbies (1/3 width on large screens) -->
+                        <div class="lg:col-span-1 space-y-4 bg-gray-900 p-6 rounded-xl card-border-gradient">
+                            <h3 class="text-xl font-bold mb-3 text-gradient">Loisirs</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-gray-800 rounded-full text-xs">Volley-ball</span>
+                                <span class="px-3 py-1 bg-gray-800 rounded-full text-xs">Kitesurf</span>
+                                <span class="px-3 py-1 bg-gray-800 rounded-full text-xs">Plongée sous-marine</span>
+                                <span class="px-3 py-1 bg-gray-800 rounded-full text-xs">Impression 3D</span>
+                                <span class="px-3 py-1 bg-gray-800 rounded-full text-xs">Échecs</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- University Projects Section (Full Width) -->
+                <section id="projects-universitaires" class="mt-16 bg-gray-900 p-8 rounded-xl card-border-gradient">
+                    <h2 class="text-3xl font-bold mb-6">Projets Universitaires</h2>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- BUT 1 Projects -->
+                        <div>
+                            <h3 class="text-2xl font-bold text-gradient mb-4 border-b border-gray-800 pb-2">BUT 1</h3>
+                            <div class="space-y-4 border-l border-gray-700 pl-4">
+                                <div class="relative timeline-item pb-4">
+                                    <p class="text-sm text-gray-400">Decembre 2023</p>
+                                    <p class="font-semibold text-white">Thermomètre numérique</p>
+                                    <p class="text-sm text-gray-500">Etude et réalisation d'un thermomètre numérique en technologie traversante.</p>
+                                </div>
+                                <div class="relative timeline-item pb-4">
+                                    <p class="text-sm text-gray-400">Decembre 2023</p>
+                                    <p class="font-semibold text-white">Commande de moteur par FPGA</p>
+                                    <p class="text-sm text-gray-500">Commande par un FPGA de la vitesse de rotation d'un moteur.</p>
+                                </div>
+                                <div class="relative timeline-item pb-4">
+                                    <p class="text-sm text-gray-400">Decembre 2023</p>
+                                    <p class="font-semibold text-white">Conception de carte électronique (KiCad)</p>
+                                    <p class="text-sm text-gray-500">Réalisation d'une carte électronique (CAO: Kicad).</p>
+                                </div>
+                                <div class="relative timeline-item pb-4">
+                                    <p class="text-sm text-gray-400">Decembre 2023</p>
+                                    <p class="font-semibold text-white">Robot écologique</p>
+                                    <p class="text-sm text-gray-500">Réalisation d'un robot écologique pour une course intra-scolaire.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- BUT 2 Projects -->
+                        <div>
+                            <h3 class="text-2xl font-bold text-gradient mb-4 border-b border-gray-800 pb-2">BUT 2</h3>
+                            <div class="space-y-4 border-l border-gray-700 pl-4">
+                                <div class="relative timeline-item pb-4">
+                                    <p class="text-sm text-gray-400">Juillet 2022</p>
+                                    <p class="font-semibold text-white">Banc de test numérique</p>
+                                    <p class="text-sm text-gray-500">Banc de test contrôlé par une carte numérique (décodage trame, FPGA...).</p>
+                                </div>
+                                <div class="relative timeline-item pb-4">
+                                    <p class="text-sm text-gray-400">Juillet 2022</p>
+                                    <p class="font-semibold text-white">Programmation d'automates</p>
+                                    <p class="text-sm text-gray-500">Programmation d'automates et micro-automates (Schneider, Arduino).</p>
+                                </div>
+                                <div class="relative timeline-item pb-4">
+                                    <p class="text-sm text-gray-400">Juillet 2022</p>
+                                    <p class="font-semibold text-white">Commande de bras manipulateur</p>
+                                    <p class="text-sm text-gray-500">Commande d'un bras manipulateur</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Contact Section (Placeholder) -->
+                <section id="contact" class="mt-16 pt-8 border-t border-gray-800">
+                    <h2 class="text-3xl font-bold mb-4">Me Contacter</h2>
+                    <p class="text-gray-400 mb-6 max-w-xl">
+                        matcarouniversities@gmail.com / matheo.caro.area@gmail.com 🇫🇷 +33 0775766432
+                    </p>
+                </section>
+            </div>
+
+
+            <!-- ============================================== -->
+            <!-- PROJECT DETAIL VIEW 1: WAV Modification -->
+            <!-- ============================================== -->
+            <div id="project-wav-view" class="view-content">
+                <a href="#projects" data-view="home-view" class="text-sm text-gray-400 hover:text-[var(--color-primary)] transition mb-6 block">
+                    &larr; Retour aux Projets
+                </a>
+                <h1 class="text-4xl font-extrabold text-[var(--color-primary)] mb-4">
+                    Modification des Fichiers Audio (.WAV)
+                </h1>
+                <p class="text-lg text-gray-300 mb-8">
+                    Projet S2 : Traitement du Signal et Python.
+                </p>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <!-- Image/Video Area -->
+                    <div class="lg:col-span-2">
+                        <div class="h-96 bg-gray-900 rounded-xl flex items-center justify-center card-border-gradient" style="background-image: url('https://placehold.co/800x400/1e6fa3/ffffff?text=Visualisation+des+Signaux+Audio'); background-size: cover; background-position: center;">
+                            <!-- Placeholder for oscilloscope view or spectrogram -->
+                        </div>
+                    </div>
+                    
+                    <!-- Technical Details -->
+                    <div class="lg:col-span-1 space-y-6">
+                        <div class="bg-gray-900 p-6 rounded-xl card-border-gradient">
+                            <h3 class="text-xl font-bold mb-3 text-gradient">Objectifs Clés</h3>
+                            <ul class="list-disc list-inside text-gray-400 space-y-2 text-sm">
+                                <li>Analyser la structure des fichiers WAV (en-tête, données).</li>
+                                <li>Implémenter des filtres numériques (passe-bas/haut) en Python.</li>
+                                <li>Modifier l'amplitude et la fréquence des signaux.</li>
+                            </ul>
+                        </div>
+                        <div class="bg-gray-900 p-6 rounded-xl card-border-gradient">
+                            <h3 class="text-xl font-bold mb-3 text-gradient">Technologies</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-gray-700 text-white rounded-full text-xs">Python 3</span>
+                                <span class="px-3 py-1 bg-gray-700 text-white rounded-full text-xs">SciPy</span>
+                                <span class="px-3 py-1 bg-gray-700 text-white rounded-full text-xs">NumPy</span>
+                                <span class="px-3 py-1 bg-gray-700 text-white rounded-full text-xs">Traitement du Signal</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-10">
+                    <h3 class="text-2xl font-bold mb-4 text-white">Détails de l'Implémentation</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        Ce projet portait sur la manipulation de signaux audio numériques. J'ai utilisé la bibliothèque `scipy.io.wavfile` pour lire et écrire les fichiers WAV, et `scipy.signal` pour appliquer divers traitements, tels que la normalisation, la coupure des fréquences indésirables (filtrage), et la modification du tempo en rééchantillonnant le signal.
+                        L'approche a renforcé ma compréhension du monde discret et du passage entre les domaines temporel et fréquentiel (Transformée de Fourier).
+                    </p>
+                </div>
+            </div>
+
+            <!-- ============================================== -->
+            <!-- PROJECT DETAIL VIEW 2: Thermometre Numerique -->
+            <!-- ============================================== -->
+            <div id="project-thermo-view" class="view-content">
+                <a href="#projects" data-view="home-view" class="text-sm text-gray-400 hover:text-[var(--color-primary)] transition mb-6 block">
+                    &larr; Retour aux Projets
+                </a>
+                <h1 class="text-4xl font-extrabold text-[var(--color-primary)] mb-4">
+                    Thermometre Numerique à Électronique Discrète
+                </h1>
+                <p class="text-lg text-gray-300 mb-8">
+                    Projet S1 : Électronique Analogique et Numérique.
+                </p>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <!-- Image/Video Area -->
+                    <div class="lg:col-span-2">
+                        <div class="h-96 bg-gray-900 rounded-xl flex items-center justify-center card-border-gradient" style="background-image: url('https://placehold.co/800x400/2a8dc7/ffffff?text=Schéma+Electronique+du+Thermomètre'); background-size: cover; background-position: center;">
+                            <!-- Placeholder for schematic or PCB layout -->
+                        </div>
+                    </div>
+                    
+                    <!-- Technical Details -->
+                    <div class="lg:col-span-1 space-y-6">
+                        <div class="bg-gray-900 p-6 rounded-xl card-border-gradient">
+                            <h3 class="text-xl font-bold mb-3 text-gradient">Objectifs Clés</h3>
+                            <ul class="list-disc list-inside text-gray-400 space-y-2 text-sm">
+                                <li>Concevoir un circuit de conditionnement pour une thermistance CTP/CTN.</li>
+                                <li>Utiliser un Comparateur (AOP) pour la conversion de température.</li>
+                                <li>Afficher le résultat sur des afficheurs 7 segments.</li>
+                            </ul>
+                        </div>
+                        <div class="bg-gray-900 p-6 rounded-xl card-border-gradient">
+                            <h3 class="text-xl font-bold mb-3 text-gradient">Technologies</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-gray-700 text-white rounded-full text-xs">Électronique Analogique</span>
+                                <span class="px-3 py-1 bg-gray-700 text-white rounded-full text-xs">AOP</span>
+                                <span class="px-3 py-1 bg-gray-700 text-white rounded-full text-xs">Afficheur 7 segments</span>
+                                <span class="px-3 py-1 bg-gray-700 text-white rounded-full text-xs">LTSpice (Simulation)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-10">
+                    <h3 class="text-2xl font-bold mb-4 text-white">Détails de l'Implémentation</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        L'objectif était de créer un thermomètre fonctionnel sans microcontrôleur, en utilisant uniquement des composants discrets (résistances, condensateurs, AOP et portes logiques). J'ai conçu le circuit pour lire la variation de résistance d'un capteur de température, convertir cette variation en tension, et utiliser des comparateurs pour piloter les décodeurs des afficheurs. Ce projet a consolidé ma compréhension des concepts de base de l'électronique de puissance et de l'instrumentation.
+                    </p>
+                </div>
+            </div>
+
+            <!-- ============================================== -->
+            <!-- PROJECT DETAIL VIEW 3: Réseau Neuronal -->
+            <!-- ============================================== -->
+            <div id="project-nn-view" class="view-content">
+                <a href="#projects" data-view="home-view" class="text-sm text-gray-400 hover:text-[var(--color-primary)] transition mb-6 block">
+                    &larr; Retour aux Projets
+                </a>
+                <h1 class="text-4xl font-extrabold text-[var(--color-primary)] mb-4">
+                    Réseau Neuronal pour la Classification d'Images
+                </h1>
+                <p class="text-lg text-gray-300 mb-8">
+                    Projet S2 : Automatisme et IA.
+                </p>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <!-- Image/Video Area -->
+                    <div class="lg:col-span-2">
+                        <div class="h-96 bg-gray-900 rounded-xl flex items-center justify-center card-border-gradient" style="background-image: url('https://placehold.co/800x400/00a0e5/ffffff?text=Architecture+CNN'); background-size: cover; background-position: center;">
+                            <!-- Placeholder for CNN architecture diagram -->
+                        </div>
+                    </div>
+                    
+                    <!-- Technical Details -->
+                    <div class="lg:col-span-1 space-y-6">
+                        <div class="bg-gray-900 p-6 rounded-xl card-border-gradient">
+                            <h3 class="text-xl font-bold mb-3 text-gradient">Objectifs Clés</h3>
+                            <ul class="list-disc list-inside text-gray-400 space-y-2 text-sm">
+                                <li>Concevoir, entraîner et évaluer un Réseau Neuronal Convolutif (CNN).</li>
+                                <li>Utiliser des techniques d'augmentation de données (Data Augmentation).</li>
+                                <li>Optimiser le modèle pour obtenir une précision élevée sur un jeu de données biomédical.</li>
+                            </ul>
+                        </div>
+                        <div class="bg-gray-900 p-6 rounded-xl card-border-gradient">
+                            <h3 class="text-xl font-bold mb-3 text-gradient">Technologies</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-gray-700 text-white rounded-full text-xs">Python</span>
+                                <span class="px-3 py-1 bg-gray-700 text-white rounded-full text-xs">TensorFlow / Keras</span>
+                                <span class="px-3 py-1 bg-gray-700 text-white rounded-full text-xs">Apprentissage Profond</span>
+                                <span class="px-3 py-1 bg-gray-700 text-white rounded-full text-xs">Classification d'Images</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-10">
+                    <h3 class="text-2xl font-bold mb-4 text-white">Détails de l'Implémentation</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        Ce projet était axé sur l'intelligence artificielle pour la classification d'images. J'ai développé un CNN à partir de zéro, en choisissant l'architecture (couches convolutives, pooling, dense) la plus adaptée aux données. L'accent a été mis sur la phase de pré-traitement et la prévention du surapprentissage (overfitting) en utilisant des techniques de *dropout* et de régularisation, permettant d'obtenir un modèle robuste et performant.
+                    </p>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- JavaScript for Client-Side Routing -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const views = document.querySelectorAll('.view-content');
+            const mainContent = document.querySelector('main');
+            const navLinks = document.querySelectorAll('.nav-link, .project-card');
+
+            /**
+             * Function to hide all views and show the selected one.
+             * @param {string} viewId - The ID of the view to show (e.g., 'home-view').
+             */
+            function navigateTo(viewId) {
+                // Ensure scroll to top when changing view
+                mainContent.scrollTop = 0;
+
+                let targetView = document.getElementById(viewId);
+                
+                // Fallback to home view if invalid ID
+                if (!targetView) {
+                    viewId = 'home-view';
+                    targetView = document.getElementById(viewId);
+                }
+
+                // Hide all views
+                views.forEach(view => {
+                    view.style.display = 'none';
+                });
+
+                // Show the target view
+                if (targetView) {
+                    targetView.style.display = 'block';
+                }
+            }
+
+            // --- Event Listeners for Navigation ---
+            
+            // 1. Handle clicks on all links/cards that trigger a view change
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    // Get the target view ID, either from data-view or from href hash
+                    let viewId = link.getAttribute('data-view');
+                    if (!viewId && link.getAttribute('href').startsWith('#')) {
+                        // Extract view ID from href for direct home/section links (e.g., #home)
+                        const hash = link.getAttribute('href').substring(1);
+                        if (hash.includes('-view')) {
+                            viewId = hash;
+                        } else {
+                            // If it's a section link like #projects or #home, we show the home-view
+                            viewId = 'home-view'; 
+                        }
+                    }
+
+                    if (viewId) {
+                        e.preventDefault(); // Stop default anchor jump
+                        window.history.pushState(null, '', '#' + viewId.replace('-view', '')); // Update URL hash cleanly
+                        navigateTo(viewId);
+                    }
+                });
+            });
+
+
+            // 2. Handle initial load and back/forward browser buttons
+            function handleHashChange() {
+                const hash = window.location.hash.substring(1);
+                // Convert simple hash (#home, #projects) to view ID (home-view)
+                let viewId = hash ? hash + '-view' : 'home-view';
+                
+                // If the hash directly matches a view ID, use it.
+                if (document.getElementById(hash)) {
+                    viewId = hash;
+                } else if (!document.getElementById(viewId)) {
+                    viewId = 'home-view'; // Default fallback
+                }
+
+                navigateTo(viewId);
+            }
+
+            window.addEventListener('hashchange', handleHashChange);
+            
+            // Initial call to load the correct view (defaults to home-view if no hash)
+            handleHashChange();
+        });
+    </script>
+</body>
+</html>
