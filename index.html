@@ -81,7 +81,7 @@
                 <div class="flex items-center space-x-4 mb-8">
                     <!-- Profile Picture Placeholder -->
                     <div class="w-14 h-14 rounded-full overflow-hidden bg-[var(--color-primary)] flex items-center justify-center">
-                        <img src="uploaded:image_0b277b.jpg-b3ee4f32-8f2c-4e02-ac5e-304b197a1b60" alt="Profile" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/100x100/2a8dc7/ffffff?text=MC';">
+                        <img src="headshot.png" alt="Profile" class="w-full h-full object-cover">
                     </div>
                     <div>
                         <h2 class="text-xl font-extrabold tracking-wider">Matheo Caro</h2>
@@ -140,9 +140,6 @@
                             <p class="text-gray-400 mb-6 max-w-lg">
                                 En tant qu'étudiant en BUT 2 GEII (parcours AII), je me spécialise à l'intersection du Génie Électrique et de l'Informatique Industrielle, en me concentrant sur l'apprentissage automatique, les systèmes embarqués et l'automatisation industrielle. Explorez mes projets concrets en vision et analyse de données.
                             </p>
-                            <a href="#projects" class="text-[var(--color-primary)] font-semibold text-lg hover:text-[var(--color-secondary)] transition">
-                                Voir la Vitrine des Projets >
-                            </a>
                         </div>
 
 
@@ -155,7 +152,7 @@
                         <!-- Stats Card 4: Languages/Frameworks -->
                         <div class="bg-gray-900 p-6 rounded-xl shadow-lg card-border-gradient transition hover:shadow-[var(--color-primary)]/50 hover:scale-[1.02]">
                             <p class="text-5xl font-extrabold text-gradient">Python</p>
-                            <p class="text-lg text-gray-300 mt-2">C/C++, TensorFlow</p>
+                            <p class="text-lg text-gray-300 mt-2">C/C++, SFC/LD</p>
                         </div>
                     </div>
 
@@ -316,12 +313,12 @@
                                     <div class="relative timeline-item pb-4">
                                         <p class="font-semibold text-white">Stagiaire en production de plastiques</p>
                                         <p class="text-sm text-[var(--color-secondary)]">Plasticos Trebol LLC (Entreprise Familiale) - Venezuela</p>
-                                        <p class="text-xs text-gray-500 mt-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                        <p class="text-xs text-gray-500 mt-1"></p>
                                     </div>
                                     <!-- Apprenti Mouliste -->
                                     <div class="relative timeline-item pb-4">
                                         <p class="font-semibold text-white">Apprenti Mouliste</p>
-                                        <p class="text-xs text-gray-500 mt-1">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                        <p class="text-xs text-gray-500 mt-1">Observation des Procesus CNC</p>
                                     </div>
                                 </div>
                             </div>
@@ -409,6 +406,7 @@
                             </div>
                         </div>
                     </div>
+                    <img src="SSI.jpg" style=" padding-left: 935px;" width="300" height="350">
                 </section>
                 
                 <!-- University Projects Section (Full Width) -->
@@ -524,8 +522,10 @@
                 <div class="mt-10">
                     <h3 class="text-2xl font-bold mb-4 text-white">Détails de l'Implémentation</h3>
                     <p class="text-gray-400 leading-relaxed">
-                        Ce projet portait sur la manipulation de signaux audio numériques. J'ai utilisé la bibliothèque `scipy.io.wavfile` pour lire et écrire les fichiers WAV, et `scipy.signal` pour appliquer divers traitements, tels que la normalisation, la coupure des fréquences indésirables (filtrage), et la modification du tempo en rééchantillonnant le signal.
-                        L'approche a renforcé ma compréhension du monde discret et du passage entre les domaines temporel et fréquentiel (Transformée de Fourier).
+                        Ce projet portait sur la manipulation de signaux audio numériques. J'ai utilisé la bibliothèque `scipy.io.wavfile` pour lire et écrire les fichiers WAV, 
+                        et `scipy.signal` pour appliquer divers traitements, tels que la normalisation, la coupure des fréquences indésirables (filtrage), et la modification du tempo en rééchantillonnant le signal.
+                        L'approche a renforcé ma compréhension du monde discret et du passage entre les domaines temporel et fréquentiel (Transformée de Fourier). Additionellement j'ai pu trouver ma passion pour la musique dans le metier, quelque chose que je ne me attender pas et qui ma beaucoup motiver au moment de faire le projet. 
+
                     </p>
                 </div>
             </div>
@@ -609,18 +609,17 @@
                         <div class="bg-gray-900 p-6 rounded-xl card-border-gradient">
                             <h3 class="text-xl font-bold mb-3 text-gradient">Objectifs Clés</h3>
                             <ul class="list-disc list-inside text-gray-400 space-y-2 text-sm">
-                                <li>Concevoir, entraîner et évaluer un Réseau Neuronal Convolutif (CNN).</li>
-                                <li>Utiliser des techniques d'augmentation de données (Data Augmentation).</li>
-                                <li>Optimiser le modèle pour obtenir une précision élevée sur un jeu de données biomédical.</li>
+                                <li>Concevoir, un robot autonome, ecologique, de plus de 700 grammes pour ce deplacer dehors un labyrithe.</li>
+                                <li>Utilisation de 2 Servo Moteur et 2 capteur de distance HSC-04.</li>
+                                <li>Optimiser le modèle pour obtenir une vitesse et agilite capable de battre les autres robot.</li>
                             </ul>
                         </div>
                         <div class="bg-gray-900 p-6 rounded-xl card-border-gradient">
                             <h3 class="text-xl font-bold mb-3 text-gradient">Technologies</h3>
                             <div class="flex flex-wrap gap-2">
-                                <span class="px-3 py-1 bg-gray-700 text-white rounded-full text-xs">Python</span>
-                                <span class="px-3 py-1 bg-gray-700 text-white rounded-full text-xs">TensorFlow / Keras</span>
-                                <span class="px-3 py-1 bg-gray-700 text-white rounded-full text-xs">Apprentissage Profond</span>
-                                <span class="px-3 py-1 bg-gray-700 text-white rounded-full text-xs">Classification d'Images</span>
+                                <span class="px-3 py-1 bg-gray-700 text-white rounded-full text-xs">C/C++</span>
+                                <span class="px-3 py-1 bg-gray-700 text-white rounded-full text-xs">Usinage des pièces</span>
+                                <span class="px-3 py-1 bg-gray-700 text-white rounded-full text-xs">Capteur Ultrasond HSC-04</span>
                             </div>
                         </div>
                     </div>
@@ -628,9 +627,12 @@
 
                 <div class="mt-10">
                     <h3 class="text-2xl font-bold mb-4 text-white">Détails de l'Implémentation</h3>
+                    <h2 class="text-1xl mb-2 text-gray">Usinage des pièces</h2> 
+                    <video width="320" height="240" controls>
+                        <source src="VidTemp.mp4" type="video/mp4">
+                    </video>
                     <p class="text-gray-400 leading-relaxed">
-                        Ce projet était axé sur l'intelligence artificielle pour la classification d'images. J'ai développé un CNN à partir de zéro, en choisissant l'architecture (couches convolutives, pooling, dense) la plus adaptée aux données. L'accent a été mis sur la phase de pré-traitement et la prévention du surapprentissage (overfitting) en utilisant des techniques de *dropout* et de régularisation, permettant d'obtenir un modèle robuste et performant.
-                    </p>
+                        Ce projet mêlait logiciel et matériel pour créer un robot mobile autonome capable d'éviter les obstacles et… ses rivaux ! Tempurai, son nom, a participé à l'épreuve IUT de l'Escape Race de Velizy en janvier 2025. Doté d'une carte Arduino Nano comme cerveau et alimenté par deux servomoteurs et une batterie de 9 V, il était capable de déplacer 700 grammes de bambou écologique.
                 </div>
             </div>
 
@@ -722,4 +724,3 @@
     </script>
 </body>
 </html>
-
